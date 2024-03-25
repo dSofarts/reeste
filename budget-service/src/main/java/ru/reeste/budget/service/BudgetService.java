@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface BudgetService {
-    List<Budget> findAllBudgets();
+    Iterable<Budget> findAllBudgets();
 
     Budget createBudget(String name, int year, int quarter);
 

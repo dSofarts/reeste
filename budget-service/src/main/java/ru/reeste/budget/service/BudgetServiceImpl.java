@@ -2,10 +2,10 @@ package ru.reeste.budget.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.reeste.budget.entity.Budget;
 import ru.reeste.budget.repository.BudgetRepository;
 
-import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -16,11 +16,12 @@ public class BudgetServiceImpl implements BudgetService {
     private final BudgetRepository budgetRepository;
 
     @Override
-    public List<Budget> findAllBudgets() {
-        return budgetRepository.findAllBudgets();
+    public Iterable<Budget> findAllBudgets() {
+        return budgetRepository.findAll();
     }
 
     @Override
+    @Transactional
     public Budget createBudget(String name, int year, int quarter) {
         return budgetRepository.save(new Budget(null, name, year, quarter));
     }
@@ -31,6 +32,7 @@ public class BudgetServiceImpl implements BudgetService {
     }
 
     @Override
+    @Transactional
     public void updateBudget(Integer id, String name, int year, int quarter) {
         budgetRepository.findById(id).ifPresentOrElse(budget -> {
             budget.setName(name);
@@ -42,7 +44,8 @@ public class BudgetServiceImpl implements BudgetService {
     }
 
     @Override
+    @Transactional
     public void deleteBudget(Integer id) {
-        budgetRepository.deleteBudget(id);
+        budgetRepository.deleteById(id);
     }
 }

@@ -11,7 +11,6 @@ import ru.reeste.budget.controller.payload.NewBudgetPayload;
 import ru.reeste.budget.entity.Budget;
 import ru.reeste.budget.service.BudgetService;
 
-import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -22,7 +21,7 @@ public class BudgetsRestController {
     private final BudgetService budgetService;
 
     @GetMapping
-    public List<Budget> getAllBudgets() {
+    public Iterable<Budget> getAllBudgets() {
         return budgetService.findAllBudgets();
     }
 

@@ -1,16 +1,8 @@
 package ru.reeste.budget.repository;
 
+import org.springframework.data.repository.CrudRepository;
 import ru.reeste.budget.entity.Budget;
 
-import java.util.List;
-import java.util.Optional;
+public interface BudgetRepository extends CrudRepository<Budget, Integer> {
 
-public interface BudgetRepository {
-    List<Budget> findAllBudgets();
-
-    Budget save(Budget budget);
-
-    Optional<Budget> findById(Integer productId);
-
-    void deleteBudget(Integer id);
 }
