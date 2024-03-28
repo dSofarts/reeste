@@ -6,8 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import ru.reeste.app.controller.clients.BadRequestException;
-import ru.reeste.app.controller.clients.BudgetRestClient;
+import ru.reeste.app.clients.BadRequestException;
+import ru.reeste.app.clients.BudgetRestClient;
 import ru.reeste.app.controller.payload.NewBudgetPayload;
 import ru.reeste.app.entity.Budget;
 

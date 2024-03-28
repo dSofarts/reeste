@@ -5,8 +5,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import ru.reeste.app.controller.clients.BadRequestException;
-import ru.reeste.app.controller.clients.BudgetRestClient;
+import ru.reeste.app.clients.BadRequestException;
+import ru.reeste.app.clients.BudgetRestClient;
 import ru.reeste.app.controller.payload.UpdateBudgetPayload;
 import ru.reeste.app.entity.Budget;
 

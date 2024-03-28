@@ -7,30 +7,23 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(schema = "reeste", name = "budget")
-public class Budget {
+@Table(schema = "reeste", name = "budget_lines_item")
+public class BudgetLinesItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @NotNull
-    @Size(min = 3, max = 100)
+    @Size(min = 1)
     private String name;
 
+    @ManyToOne
+    @JoinColumn(name = "id_type", nullable = false)
     @NotNull
-    private Integer year;
-
-    @NotNull
-    private Integer quarter;
-
-    @OneToMany
-    @JoinColumn(name = "budget_id")
-    private List<BudgetLine> budgetLines;
+    private BudgetLinesType idType;
 }

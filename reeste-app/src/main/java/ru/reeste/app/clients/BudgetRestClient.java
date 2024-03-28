@@ -1,4 +1,4 @@
-package ru.reeste.app.controller.clients;
+package ru.reeste.app.clients;
 
 import ru.reeste.app.entity.Budget;
 

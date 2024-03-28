@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.reeste.budget.entity.Budget;
 import ru.reeste.budget.repository.BudgetRepository;
 
+import java.util.ArrayList;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -23,7 +24,7 @@ public class BudgetServiceImpl implements BudgetService {
     @Override
     @Transactional
     public Budget createBudget(String name, int year, int quarter) {
-        return budgetRepository.save(new Budget(null, name, year, quarter));
+        return budgetRepository.save(new Budget(null, name, year, quarter, new ArrayList<>()));
     }
 
     @Override
