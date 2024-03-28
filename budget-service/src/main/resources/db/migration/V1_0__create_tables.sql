@@ -18,13 +18,13 @@ create table reeste.budget_lines_item
 (
     id      serial primary key,
     name    varchar not null check (length(trim(name)) > 0),
-    id_type integer not null references reeste.budget_lines_type (id)
+    id_type integer references reeste.budget_lines_type (id) on delete cascade
 );
 
 create table reeste.budget_lines
 (
     id        serial primary key,
-    item_id   integer        not null references reeste.budget_lines_item (id),
+    item_id   integer        references reeste.budget_lines_item (id) on delete cascade,
     sum       numeric(38, 2) not null default 0,
-    budget_id integer        not null references reeste.budget (id)
+    budget_id integer        references reeste.budget (id)
 );

@@ -18,7 +18,7 @@ public class BudgetsController {
 
     private final BudgetRestClient budgetRestClient;
 
-    @GetMapping("")
+    @GetMapping
     public String budgetList(Model model) {
         model.addAttribute("budgets", budgetRestClient.findAllBudgets());
         return "budget/budgets";

@@ -17,8 +17,8 @@ public class BudgetLine {
 
     @Id
     private Integer id;
-    @ManyToOne
-    @JoinColumn(name = "item_id", nullable = false)
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "item_id", referencedColumnName = "id", nullable = false)
     private BudgetLinesItem item;
     @NotNull
     private BigDecimal sum;

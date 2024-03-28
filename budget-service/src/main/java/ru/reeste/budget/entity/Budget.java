@@ -30,7 +30,7 @@ public class Budget {
     @NotNull
     private Integer quarter;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "budget_id")
     private List<BudgetLine> budgetLines;
 }

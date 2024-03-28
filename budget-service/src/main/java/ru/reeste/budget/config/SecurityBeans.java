@@ -16,9 +16,9 @@ public class SecurityBeans {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
-                        .requestMatchers(HttpMethod.POST, "/api/v1/budgets").hasAuthority("SCOPE_edit_budgets")
-                        .requestMatchers(HttpMethod.PATCH, "/api/v1/budgets/{budgetId}").hasAuthority("SCOPE_edit_budgets")
-                        .requestMatchers(HttpMethod.DELETE, "/api/v1/budgets/{budgetId}").hasAuthority("SCOPE_edit_budgets")
+                        .requestMatchers(HttpMethod.POST).hasAuthority("SCOPE_edit_budgets")
+                        .requestMatchers(HttpMethod.PATCH).hasAuthority("SCOPE_edit_budgets")
+                        .requestMatchers(HttpMethod.DELETE).hasAuthority("SCOPE_edit_budgets")
                         .requestMatchers(HttpMethod.GET).hasAuthority("SCOPE_view_budgets")
                         .anyRequest().denyAll())
                 .csrf(CsrfConfigurer::disable)

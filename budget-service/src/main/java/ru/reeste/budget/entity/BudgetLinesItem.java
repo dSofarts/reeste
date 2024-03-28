@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Entity
 @NoArgsConstructor
@@ -23,7 +25,6 @@ public class BudgetLinesItem {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "id_type", nullable = false)
-    @NotNull
-    private BudgetLinesType idType;
+    @JoinColumn(name = "id_type")
+    private BudgetLinesType type;
 }

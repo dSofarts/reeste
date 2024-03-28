@@ -33,3 +33,11 @@ body {
     --bd-callout-bg: var(--bs-warning-bg-subtle);
     --bd-callout-border: var(--bs-warning-border-subtle);
 }
+
+.i-link {
+    cursor: pointer;
+}
+
+.i-link:hover {
+    color: var(--bs-primary)
+}
