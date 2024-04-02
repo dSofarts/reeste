@@ -1,4 +1,4 @@
-package ru.reeste.budget.controller;
+package ru.reeste.budget.controller.budgetLine;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

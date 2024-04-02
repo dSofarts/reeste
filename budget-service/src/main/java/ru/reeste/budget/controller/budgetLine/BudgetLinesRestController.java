@@ -1,4 +1,4 @@
-package ru.reeste.budget.controller;
+package ru.reeste.budget.controller.budgetLine;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package ru.reeste.app.controller;
+package ru.reeste.app.controller.budget;
 
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
