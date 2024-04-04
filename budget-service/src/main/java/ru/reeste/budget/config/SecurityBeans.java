@@ -19,7 +19,8 @@ public class SecurityBeans {
                         .requestMatchers(HttpMethod.POST).hasAuthority("SCOPE_edit_budgets")
                         .requestMatchers(HttpMethod.PATCH).hasAuthority("SCOPE_edit_budgets")
                         .requestMatchers(HttpMethod.DELETE).hasAuthority("SCOPE_edit_budgets")
-                        .requestMatchers(HttpMethod.GET).hasAuthority("SCOPE_view_budgets")
+                        .requestMatchers(HttpMethod.GET).permitAll()
+//                        .requestMatchers(HttpMethod.GET).hasAuthority("SCOPE_view_budgets")
                         .anyRequest().denyAll())
                 .csrf(CsrfConfigurer::disable)
                 .sessionManagement(sessionManagement -> sessionManagement

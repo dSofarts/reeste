@@ -1,0 +1,25 @@
+server:
+  port: 8083
+
+reeste:
+  services:
+    budget:
+      uri: http://127.0.0.1:8081
+    reviews:
+      uri: http://127.0.0.1:8084
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://127.0.0.1:8082/realms/reeste
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: committee-app
+            client-secret: fRvCV61lU39Ixcmf0O01ci3FSjlAL5a9
+            authorization-grant-type: authorization_code
+            scope:
+              - openid
+              - view_budgets

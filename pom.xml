@@ -9,8 +9,10 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>reeste-app</module>
+        <module>manager-app</module>
         <module>budget-service</module>
+        <module>committee-app</module>
+        <module>approval-service</module>
     </modules>
 
 

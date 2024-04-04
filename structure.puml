@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor Manager
+
+box Application
+    participant "Manager App"
+    participant "Budget Service"
+    participant "Approval Service"
+    participant "Committee App"
+end box
+
+actor Committee
+
+Manager -> "Manager App"
+"Manager App" -> "Budget Service"
+"Budget Service" -> "Manager App"
+"Manager App" -> Manager
+
+Committee -> "Committee App"
+"Committee App" -> "Budget Service"
+"Budget Service" -> "Committee App"
+"Committee App" -> "Approval Service"
+"Approval Service" -> "Committee App"
+"Committee App" -> Committee
+
+
+@enduml

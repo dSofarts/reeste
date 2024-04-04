@@ -1,0 +1,11 @@
+package ru.reeste.committee;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class CommitteeApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(CommitteeApplication.class, args);
+    }
+}

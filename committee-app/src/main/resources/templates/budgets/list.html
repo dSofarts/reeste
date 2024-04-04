@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Наши бюджеты</title>
+</head>
+<body>
+<h1>Бюджеты</h1>
+<ul>
+    <li data-th-each="budget : ${budgets}">
+        <a data-th-text="${budget.name()}" data-th-href="@{/committee/budgets/{budgetId}(budgetId=${budget.id})}"></a>
+    </li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>[[${budget.name}]]</title>
+</head>
+<body>
+<h1 data-th-text="${budget.name}"></h1>
+<p data-th-text="${budget.year}"></p>
+<p data-th-text="${budget.quarter}"></p>
+<div>
+  <div data-th-if="${errors}">
+    <h3>Ошибки</h3>
+    <ul>
+      <li data-th-each="error : ${errors}" data-th-text="${error}"></li>
+    </ul>
+  </div>
+  <h2>Обзоры</h2>
+  <div>
+    <form method="post" data-th-action="@{/committee/budgets/{budgetId}/create-review(budgetId=${budget.id})}">
+      <textarea name="review" data-th-text="${payload?.review()}"></textarea><br>
+      <button type="submit">Отправить обзор</button>
+    </form>
+  </div>
+  <div>
+    <p data-th-each="review : ${reviews}" data-th-text="${review.review}"></p>
+  </div>
+</div>
+</body>
+</html>
